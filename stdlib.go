@@ -596,7 +596,7 @@ const STDLIB = "#!bash\n" +
 	"  node_wanted=${node_version_prefix}${version}\n" +
 	"  node_prefix=$(\n" +
 	"    # Look for matching node versions in $NODE_VERSIONS path\n" +
-	"    find \"$NODE_VERSIONS\" -maxdepth 1 -mindepth 1 -type d -name \"$node_wanted*\" |\n" +
+	"    find \"$NODE_VERSIONS\" -L -maxdepth 1 -mindepth 1 -type d -name \"$node_wanted*\" |\n" +
 	"\n" +
 	"    # Strip possible \"/\" suffix from $NODE_VERSIONS, then use that to\n" +
 	"    # Strip $NODE_VERSIONS/$NODE_VERSION_PREFIX prefix from line.\n" +

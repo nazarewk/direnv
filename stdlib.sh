@@ -594,7 +594,7 @@ use_node() {
   node_wanted=${node_version_prefix}${version}
   node_prefix=$(
     # Look for matching node versions in $NODE_VERSIONS path
-    find "$NODE_VERSIONS" -maxdepth 1 -mindepth 1 -type d -name "$node_wanted*" |
+    find "$NODE_VERSIONS" -L -maxdepth 1 -mindepth 1 -type d -name "$node_wanted*" |
 
     # Strip possible "/" suffix from $NODE_VERSIONS, then use that to
     # Strip $NODE_VERSIONS/$NODE_VERSION_PREFIX prefix from line.
